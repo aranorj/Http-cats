@@ -12,7 +12,9 @@ const findCatByCode = async(errorCode) => {
 
 const findAllCats = async() => {
   try {
-    return await db.Cat.findAll();
+    return await db.Cat.findAll({
+      order: [['errorCode', 'ASC']]
+    });
   }catch(error) {
     let errorMessaje = 'Error en la persistencia al obtener todas las entidades Cat'
     console.error(`${errorMessaje} ${error}`);

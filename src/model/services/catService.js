@@ -3,7 +3,7 @@ const catRepository = require('../repositories/catRepository');
 async function getAllCatsSorted() {
   try {
     const cats = await catRepository.findAllCats();
-    cats.sort(() => Math.random() - 0.5);
+    cats.sort(() => Math.random() - 0.5); //si quiero que respete orden por codigo quito esta linea
     return cats;
   } catch (error) {
     console.error(error.message + error);
