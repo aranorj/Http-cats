@@ -19,7 +19,7 @@ async function getCatByCode(errorCode) {
       error.status = 404;
       throw error;
     }
-    return
+    return cat;
   } catch (error) {
     console.error(error.message + error);
     throw error;
