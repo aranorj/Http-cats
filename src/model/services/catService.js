@@ -15,15 +15,19 @@ async function getCatByCode(errorCode) {
   try {
     const cat = await catRepository.findCatByCode(errorCode);
     if (cat == null) {
-      const error = new Error('Not Found');
-      error.status = 404;
-      throw error;
+      throwNotFoundError()
     }
     return cat;
   } catch (error) {
     console.error(error.message + error);
     throw error;
   }
+}
+
+function throwNotFoundError() {
+  const error = new Error('Not Found');
+  error.status = 404;
+  throw error;
 }
 
 module.exports = {
