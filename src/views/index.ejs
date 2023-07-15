@@ -8,14 +8,15 @@
   <h1>Explora los Errores HTTP con Gatites</h1>
   <div class="container">
     <% cats.forEach((cat) => { %>
+      <a class = "card__link" href="/cats/<%=cat.errorCode%>">
       <div class="card">
         <img src="<%= cat.image%>" alt="<%= cat.name%>" class="card__image">
         <div class="card-content">
           <h2 class="card__title"><%= cat.error_code %></h2>
           <h3 class="card__subtitle"><%= cat.name %></h3>
-          <p><%= cat.description %></p>
         </div>
       </div>
+    </a>
     <% }); %>
   </div>
 </body>
