@@ -1,4 +1,4 @@
-const db = require('../models')
+const db = require('../database')
  
 const findCatByCode = async(errorCode) => {
     try {
