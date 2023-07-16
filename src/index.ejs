@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
-  <h1>Explora los Errores HTTP con Gatites</h1>
+  <h1><%=title%></h1>
   <div class="container">
     <% cats.forEach((cat) => { %>
       <a class = "card__link" href="/cats/<%=cat.errorCode%>">
