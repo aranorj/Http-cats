@@ -1,5 +1,5 @@
 var express = require('express');
-const db = require('.')
+const db = require('./index')
 var router = express.Router();
 
 router.get('/', async (_req, res) => {
@@ -8,7 +8,7 @@ router.get('/', async (_req, res) => {
             order: [['errorCode', 'ASC']]
         });
         allCats.sort(() => Math.random() - 0.5)
-        res.render('./index', { cats: allCats, title: "Explora los errores http con gatites" })
+        res.render('./index', { cats: allCats, title: "Explora los errores HTTP con gatites" })
         //res.status(200).json(cats);
     } catch (error) {
         console.error('Error al obtener la entidad Cat:', error);
