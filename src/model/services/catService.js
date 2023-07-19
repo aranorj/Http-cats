@@ -15,7 +15,7 @@ async function getCatByCode(errorCode) {
   try {
     const cat = await catRepository.findCatByCode(errorCode);
     if (cat == null) {
-      throwNotFoundError()
+      throwNewCustomError("Not Found", 404)
     }
     return cat;
   } catch (error) {
@@ -24,8 +24,8 @@ async function getCatByCode(errorCode) {
   }
 }
 
-function throwNotFoundError() {
-  const error = new Error('Not Found');
+function throwNewCustomError(message, status) {
+  const error = new Error(message, status);
   error.status = 404;
   throw error;
 }
