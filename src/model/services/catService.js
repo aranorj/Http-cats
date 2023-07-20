@@ -1,6 +1,6 @@
 const catRepository = require('../repositories/catRepository');
 
-const getAllCatsSorted = async() => {
+const getAllCatsSorted = async () => {
   try {
     const cats = await catRepository.findAllCats();
     cats.sort(() => Math.random() - 0.5); //si quiero que respete orden por codigo quito esta linea
@@ -11,7 +11,7 @@ const getAllCatsSorted = async() => {
   }
 }
 
-const getCatByCode = async(errorCode) => {
+const getCatByCode = async (errorCode) => {
   try {
     const cat = await catRepository.findCatByCode(errorCode);
     if (cat == null) {

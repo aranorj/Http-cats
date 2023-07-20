@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index.routes');
 var app = express();
 
 //recursos estáticos
-const publicPath = path.join(__dirname,'../public');
+const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 
 // view engine setup
@@ -24,14 +24,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 //catch y foward para error 404
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 //404 handler 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (err.status === 404) {
-    res.status(404).render('error', {error: err});
+    res.status(404).render('error', { error: err });
   } else {
     next(err);
   }
@@ -39,7 +39,7 @@ app.use(function(err, req, res, next) {
 
 const port = process.env.PORT || 3200;
 
-app.listen(port, ()=>{
+app.listen(port, () => {
   console.log(`Escuchando por el puerto ${port}`)
 });
 

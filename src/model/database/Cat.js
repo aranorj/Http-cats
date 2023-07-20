@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    
+
     let alias = 'Cat';
     let cols = {
         id: {
@@ -10,15 +10,15 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING,
             allowNull: false,
-        }, 
+        },
         errorCode: {
             type: dataTypes.INTEGER,
             allowNull: false,
-        }, 
+        },
         description: {
             type: dataTypes.STRING,
             allowNull: true,
-        }, 
+        },
         image: {
             type: dataTypes.STRING,
             allowNull: true,
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'Cats',
         timestamps: false
     }
-    
+
     const Cat = sequelize.define(alias, cols, config);
 
     return Cat;
