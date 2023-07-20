@@ -15,7 +15,7 @@ const getCatByCode = async(errorCode) => {
   try {
     const cat = await catRepository.findCatByCode(errorCode);
     if (cat == null) {
-      throwNewCustomError("Not Found", 404)
+      throwNewCustomError('Not Found', 404)
     }
     return cat;
   } catch (error) {
