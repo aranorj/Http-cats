@@ -41,7 +41,7 @@ const catController = {
 
 function throwNewCustomError(message, status) {
   const error = new Error(message, status);
-  error.status = 404;
+  error.status = status;
   throw error;
 }
 
